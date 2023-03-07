@@ -1,0 +1,13 @@
+.listOfVillagers {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto auto auto; 
+    column-gap: 10px;
+    row-gap: 15px;
+    padding: 10px 30px;
+}
+
+.villagerCard {
+    text-align: center;
+}
