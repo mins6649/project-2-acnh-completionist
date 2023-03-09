@@ -1,9 +1,10 @@
 import React from "react";
+import '../css/App.css';
 
 function Home(){
 
     return(
-        <div>Home</div>
+        <div className="subtitle">Home</div>
     )
 };
 

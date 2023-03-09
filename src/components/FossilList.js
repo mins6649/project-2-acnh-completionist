@@ -1,15 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import FossilCard from "./FossilCard";
+import '../css/App.css';
 
-function FossilsList(){
-
-    //FOSSILS:
-    const [fossils, setFossils] = useState([]);
-    useEffect(()=>{
-        fetch("http://acnhapi.com/v1a/fossils")
-        .then(res => res.json())
-        .then(data => setFossils(data))
-    }, [])
+function FossilList({fossils}){
 
     const renderFossils = fossils.map((fossil) => {
         return <FossilCard 
@@ -30,4 +23,4 @@ function FossilsList(){
     )
 };
 
-export default FossilsList;
+export default FossilList;

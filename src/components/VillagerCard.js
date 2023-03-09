@@ -1,21 +1,27 @@
 import React, {useState} from "react"
-import "../css/Villagers.css"
+import '../css/App.css';
 
-function VillagerCard({name, personality, birthday, species, gender, hobby, catchPhrase, image}){
-    
+function VillagerCard({name, personality, birthday, species, hobby, catchPhrase, image}){
+
+    const front = <div> <p>Species: {species}</p> <p>Personality: {personality}</p> </div>
+    const back = <div> <p>Birthday: {birthday}</p> <p>Hobby: {hobby}</p> <p>Catch-phrase: {catchPhrase}</p> </div> 
     const [isClicked, setIsClicked] = useState(true)
     function handleClick(){
         setIsClicked(!isClicked)
     }
-    const front = <div> <img src={image} alt={name}/> <p>{name}</p> <p>{species}</p> <p>{personality}</p> </div>
-    const back = <div> <p>{birthday}</p> <p>{hobby}</p> <p>{catchPhrase}</p> </div> 
-     
+
     return(
-        <div>
-            <div className="villagerCard" onClick={handleClick}>
-                <button>☆</button>
-                {isClicked ? front  : back }
-                 {/* GENDER!!!!!!! */}
+        <div className="villagerCard">
+            <div  >
+                <div onClick={handleClick}>
+                    <h3>{name}</h3>
+                    <img src={image} alt={name}/>
+
+                    {isClicked ? front  : back }
+                </div>
+
+                <button>Favorite</button>
+                <button>My Villager</button>
                  
             </div>
            
