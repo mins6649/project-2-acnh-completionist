@@ -1,5 +1,6 @@
 import React from "react";
 import VillagerCard from "./VillagerCard";
+import '../css/App.css';
 
 function VillagerList({villagers}){
 
@@ -10,10 +11,10 @@ function VillagerList({villagers}){
                 personality={villager.personality} 
                 birthday={villager["birthday-string"]} 
                 species={villager.species} 
-                gender={villager.gender} 
+                // gender={villager.gender} 
                 hobby={villager.hobby}
                 catchPhrase={villager["catch-phrase"]}
-                image={villager["image_uri"]}
+                image={villager["icon_uri"]}
                 />
     })
 
