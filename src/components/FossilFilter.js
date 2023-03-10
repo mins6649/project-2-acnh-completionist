@@ -12,7 +12,7 @@ function FossilFilter({search, onSearchChange, categoryChange}){
     return(
         <div className="filter">
             <button onClick={handleClick} className="searchButton" ><img className="magImg" src={MagnifyingGlass}/></button>
-            {isSearch ? <DDM search={search} searchChange={onSearchChange} categoryChange={categoryChange} placeholder="Search by Name, Species or Personalities..."/> : null} 
+            {isSearch ? <DDM search={search} searchChange={onSearchChange} categoryChange={categoryChange} placeholder="Search by Name or Part-Of Collection..."/> : null} 
       </div>
     )
 }

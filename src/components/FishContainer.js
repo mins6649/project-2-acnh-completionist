@@ -35,7 +35,7 @@ function FishContainer(){
         }else if (isNorth){
                 return fi.availability.isAllYear || fi.availability["month-array-northern"].includes(parseInt(category))
         }else if(!isNorth){
-                return fi.availability.isAllYear || fi.availability["month-array-southern"].includes(category)
+                return fi.availability.isAllYear || fi.availability["month-array-southern"].includes(parseInt(category))
         }
     })
     const fishList = fishCategory.filter((fish)=>{

@@ -9,8 +9,8 @@ function CatchThemAllCard(props){
     //Displays Card Info Based on Click:
     const [isClicked, setIsClicked] = useState(true)
 
-    const front = <div> <div>AVAILABILITY</div> {location&&<div>Location: {location}</div>} {<div>Months: {showAvailableMonths()}</div>}{isAllDay ? <div>Time: All Day</div> : <div>time: {time}</div>}</div>
-    const back = <div> {shadow&&<div>Shadow Size: {shadow}</div>} {rarity&&<div>Rarity: {rarity}</div>} <div>Sell Price: {price} <img className="bellsImage" src={Bells}/></div> </div>
+    const front = <div> <div className="availableText" >-AVAILABILITY-</div> {location&&<div>Location: {location}</div>} {<div>Months: {showAvailableMonths()}</div>}{isAllDay ? <div>Time: All Day</div> : <div>time: {time}</div>}</div>
+    const back = <div className="smallTextWrap"> {shadow&&<div>Shadow Size: {shadow}</div>} {rarity&&<div>Rarity: {rarity}</div>} <div>Sell Price: {price} <img className="bellsImage" src={Bells}/></div> </div>
 
     function displayInfo(){
         setIsClicked(!isClicked)

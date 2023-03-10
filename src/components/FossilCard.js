@@ -14,8 +14,10 @@ function FossilCard({name, price, image, partOf}){
         <div className="villagerCard">
             <h3>{name.charAt(0).toUpperCase() + name.slice(1)}</h3>
             <img src={image} alt={name} />
-            <div>Part Of: {partOf.charAt(0).toUpperCase() + partOf.slice(1)}</div>
-            <div>Sell Price: {price} <img className="bellsImage" src={Bells}/> </div>
+            <div className="smallTextWrap">
+                <div>Part Of: {partOf.charAt(0).toUpperCase() + partOf.slice(1)}</div>
+                <div>Sell Price: {price} <img className="bellsImage" src={Bells}/> </div>
+            </div>
             <button className={isCollected?"donationButton donatedButton":"donationButton"} onClick={handleCollection} >{isCollected ? "Already Donated!" : "Donate to Museum"}</button>
         </div>
     )
