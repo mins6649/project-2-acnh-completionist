@@ -50,27 +50,21 @@ function VillagerContainer(){
     }
     function handleSpecies(e){
         setSpecies(e.target.value)
-        
     }
     function handlePersonailty(e){
         setPersonality(e.target.value)
-
     }
     function handleBirthday(e){
         setBirthday(e.target.value)
-
     }
     function handleHobby(e){
         setHobby(e.target.value)
-
     }
     function handleCatchPhrase(e){
         setCatchPhrase(e.target.value)
-
     }
     function handleImage(e){
         setImage(e.target.value)
-
     }
     function handleSubmit(e){
         e.preventDefault();
@@ -86,6 +80,8 @@ function VillagerContainer(){
         })
         .then(res => res.json())
         .then(() => setVillagersArr(newVillagerData))
+
+        e.target.reset()
     }
 
     return(
@@ -96,9 +92,12 @@ function VillagerContainer(){
                     search={search}
                     onSearchChange={onSearchChange}
                 />
-                <button onClick={handleClick}>Add a New Villager</button>
-                <br/>
-                {showForm ? 
+                <div className="filter">
+                <button class="searchButton" onClick={handleClick}>+</button>
+                </div>
+                
+            </h2>
+            {showForm ? 
                 <VillagerForm 
                     handleSubmit={handleSubmit} 
                     handleName={handleName} 
@@ -109,7 +108,6 @@ function VillagerContainer(){
                     handleCatchPhrase={handleCatchPhrase}
                     handleImage={handleImage}
                     /> : null }
-            </h2>
             <VillagerList villagers={filter}/>
         </div>
     );

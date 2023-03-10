@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import CatchThemAllList from "./CatchThemAllList";
 import Filter from "./Filter";
 import '../css/App.css';
+import NHem from "../images/nHem.png"
+import SHem from "../images/sHem.png"
 
 function BugContainer(){
 
@@ -43,11 +45,24 @@ function BugContainer(){
 
     return(
         <div> 
-            <h2 className="subtitle">Bugs</h2>
-            <button onClick={handleHemisphere}>{isNorth ? "Northern Hemisphere" : "Southern Hemisphere"}</button>
-            <Filter search={search} searchChange={searchChange} categoryChange={categoryChange} />
+            <h2 className="subtitle">
+                Bugs
+                <Filter search={search} searchChange={searchChange} categoryChange={categoryChange} />
+                <button className="hemisphereToggle" onClick={handleHemisphere}>
+                    {isNorth ? 
+                        <>
+                            Northern Hemisphere 
+                            <img className="globeImg" src={NHem}/>
+                        </> 
+                        : 
+                        <>
+                            Southern Hemisphere 
+                            <img className="globeImg" src={SHem}/>
+                        </>
+                    }
+                </button>
+            </h2>
             <CatchThemAllList arr={bugsList} isNorth={isNorth}/>
-
         </div>
     )
 }

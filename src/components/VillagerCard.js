@@ -3,12 +3,28 @@ import '../css/App.css';
 
 function VillagerCard({name, personality, birthday, species, hobby, catchPhrase, image}){
 
-    const front = <div> <p>Species: {species}</p> <p>Personality: {personality}</p> </div>
-    const back = <div> <p>Birthday: {birthday}</p> <p>Hobby: {hobby}</p> <p>Catch-phrase: {catchPhrase}</p> </div> 
+    const [isLiked, setIsLiked] = useState(false)
+    function handleLike(event){
+        event.stopPropagation()
+        setIsLiked(!isLiked)
+    }
+    const front = <div> 
+            <p class="villagerCardText">Species: {species}</p> 
+            <p class="villagerCardText">Personality: {personality}</p> 
+            <button class="favoriteButton" onClick={handleLike}> {isLiked ? "♥" : "♡"} </button> 
+        </div>
+
+    const back = <div> 
+            <p class="villagerCardText">Birthday: {birthday}</p> 
+            <p class="villagerCardText">Hobby: {hobby}</p> 
+            <p class="villagerCardText">Catch-phrase: {catchPhrase}</p> 
+        </div> 
+
     const [isClicked, setIsClicked] = useState(true)
     function handleClick(){
         setIsClicked(!isClicked)
     }
+
 
     return(
         <div className="villagerCard">
@@ -16,15 +32,9 @@ function VillagerCard({name, personality, birthday, species, hobby, catchPhrase,
                 <div onClick={handleClick}>
                     <h3>{name}</h3>
                     <img src={image} alt={name}/>
-
                     {isClicked ? front  : back }
                 </div>
-
-                <button>Favorite</button>
-                <button>My Villager</button>
-                 
             </div>
-           
         </div>
     )
 };  

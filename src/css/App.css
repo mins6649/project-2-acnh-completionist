@@ -1,38 +1,129 @@
-/* .App {
+/* COLORS:
+ yellow: #facb47
+ new horizon blue: #81cad8
+ nav bar green; #88c9a1
+ offwhite: #f6eee1
+ */
+
+ .App {
+    background-image: none;
+    background-color: #f6eee1;
+  }
+
+/* APP */
+* {
+  font-family: 'Single Day', cursive;
+}
+
+body{
+  margin: 0;
+}
+.App-header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.mainSign{
+  width: 10rem;
+}
+.title {
+  font-size: 350%;
+  color: #81cad8;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.navBar {
+  display: flex;
+  flex-wrap: wrap;
+  margin:1rem auto;
+  justify-content: center;
+  margin-top: 0;
+}
+.link {
+  background-color: #88c9a1;
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 10px;
+ 
+
+  font-size: 100%;
+  color: #f6eee1;
+  text-decoration: none;
+}
+.subtitle{
+  font-size: 40px;
+  /* color: #88c9a1; */
+  color: #ccba96;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.filter {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.searchButton {
+  background-color: #ccba96;
+  border: 0;
+  padding: 5px 15px;
+  border-radius: 50px;
+  margin-left: 20px;
+  margin-right: 5px;
+  font-size: 25px;
+  color: #f6eee1;
+}
+.searchBar {
+  font-size: 1rem;
+  width:17rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* IMAGES */
+
+.bellsImage {
+  width: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.listOfVillagers {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding-left: auto;
+  padding-right: auto;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+
+.villagerCard {
+  width: 200px;
+  background-color: rgba(112,185,150,0.75);
+  text-align: center;
+  padding: 1rem 1rem;
+  border-radius: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* DESKTOP */
+@media only screen and (min-width: 600px) {
+
+  .App {
+    width: 100VW;
+    background:
+      url("../images/background.jpg")
+      no-repeat
+      fixed
+      center center/ 100% 100%;
+      padding:1rem;
+      margin:0 auto;
+      object-fit: cover;
+  
   }
-  to {
-    transform: rotate(360deg);
+
+  .filter {
+    text-align: left;
   }
-} */
+
+}

@@ -19,10 +19,10 @@ function App() {
     <div className="App">
              
       <header className="App-header">
-        <img className='mainSign' src={MainSign}/>
+        {/* <img className='mainSign' src={MainSign}/> */}
 
         <div className='header'>
-          <h1 className='title'> The Complete Encyclopedia</h1>
+          <h1 className='title'> The Complete <img className='mainSign' src={MainSign}/> Encyclopedia</h1>
           <nav className='navBar'>
             <Link className="link" to="/">Home</Link>
             <Link className="link" to="/villagers">Villagers</Link>

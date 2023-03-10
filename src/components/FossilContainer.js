@@ -25,8 +25,10 @@ function FossilContainer(){
 
     return(
         <div>
-            <h2 className="subtitle">Fossils</h2>
-            <FossilFilter  search={search} onSearchChange={onSearchChange}/>
+            <h2 className="subtitle">
+                Fossils
+                <FossilFilter  search={search} onSearchChange={onSearchChange}/>
+            </h2>
             <FossilList fossils={filter}/>
         </div>
     )

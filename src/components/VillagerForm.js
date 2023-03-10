@@ -6,11 +6,11 @@ function VillagerForm({handleSubmit, handleName, handleSpecies, handlePersonailt
     return(
         <div className="container">
             <form className="addVillagers" onSubmit={handleSubmit}>
-                <h3>Add a New Villager!</h3>
+                <div>Add a New Villager!</div>
                 <input
                 type="text"
                 name="name"
-                placeholder="Villager's name..."
+                placeholder="Name..."
                 className="input-text"
                 onChange={handleName}
                 />
@@ -34,7 +34,7 @@ function VillagerForm({handleSubmit, handleName, handleSpecies, handlePersonailt
                 <input
                 type="text"
                 name="birthday"
-                placeholder="Birthday (ex May 2nd)..."
+                placeholder="Birthday... (ex May 2nd)"
                 className="input-text"
                 onChange={handleBirthday}
                 />
@@ -58,7 +58,7 @@ function VillagerForm({handleSubmit, handleName, handleSpecies, handlePersonailt
                 <input
                 type="text"
                 name="image"
-                placeholder="Villager's icon URL..."
+                placeholder="Villager's ICON URL ..."
                 className="input-text"
                 onChange={handleImage}
                 />
@@ -66,7 +66,7 @@ function VillagerForm({handleSubmit, handleName, handleSpecies, handlePersonailt
                 <input
                 type="submit"
                 name="submit"
-                value="Create New Villager"
+                value="+ New Villager"
                 className="submit"
                 />
             </form>

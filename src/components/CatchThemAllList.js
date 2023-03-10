@@ -26,7 +26,7 @@ function CatchThemAllList({arr, isNorth}){
                 />
     })
     return(
-        <div>
+        <div className="listOfVillagers">
             {renderList}
         </div>
     )

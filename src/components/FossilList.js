@@ -16,7 +16,7 @@ function FossilList({fossils}){
 
     return(
         <div>
-            <div>
+            <div className='listOfVillagers'>
                 {renderFossils}
             </div>
         </div>
