@@ -5,7 +5,7 @@ function DropDownMenu({search, searchChange, categoryChange}){
 
     return(
         <div>
-            <select className="filterByMonth" name="filter" onChange={categoryChange}>
+            <select className="filterDropDown" name="filter" onChange={categoryChange}>
                 <option value="All">Month:</option>
                 <option value="1">Jan</option>
                 <option value="2">Feb</option>

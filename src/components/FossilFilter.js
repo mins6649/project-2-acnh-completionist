@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import '../css/App.css';
 import MagnifyingGlass from "../images/wmagglass.png"
+import DDM from "./DDM";
 
-function FossilFilter({search, onSearchChange}){
+function FossilFilter({search, onSearchChange, categoryChange}){
     const [isSearch, setIsSearch] = useState(false)
     function handleClick(){
         setIsSearch(!isSearch)
@@ -11,7 +12,7 @@ function FossilFilter({search, onSearchChange}){
     return(
         <div className="filter">
             <button onClick={handleClick} className="searchButton" ><img className="magImg" src={MagnifyingGlass}/></button>
-            {isSearch ? <input className="searchBar" type="text" name="search" value={search} placeholder="Search Fossils By Name or Part-Of Collection..." onChange={onSearchChange}/> : null} 
+            {isSearch ? <DDM search={search} searchChange={onSearchChange} categoryChange={categoryChange} placeholder="Search by Name, Species or Personalities..."/> : null} 
       </div>
     )
 }

@@ -18,14 +18,31 @@ function VillagerContainer(){
         .then(data => setVillagersArr(data))
     }, [])
     const updatedVillagers = villagers.concat(villagersArr)
-    console.log(updatedVillagers)
 
     //FILTER VILLAGERS BY NAME, PERSONALITY, SPECIES
+    const [category, setCategory] = useState("All");
+    function categoryChange(e){
+        setCategory(e.target.value);
+    }
     const [search, setSearch] = useState("");
     function onSearchChange(e){
         setSearch(e.target.value)
     }
-    const filter = updatedVillagers.filter((villager)=>{
+    let alphabeticalList = []
+    if(category === "alphabetical"){
+        alphabeticalList = updatedVillagers.sort((a,b)=>{
+            if (a.name["name-USen"] > b.name["name-USen"]){
+                return 1
+            } else if (a.name["name-USen"] < b.name["name-USen"]){
+                return -1
+            } return 0
+        })
+    }else{
+        alphabeticalList = updatedVillagers
+    }
+
+
+    const filter = alphabeticalList.filter((villager)=>{
         if (search === "") return true;
         return villager.name["name-USen"].toLowerCase().includes(search.toLowerCase()) || villager.species.toLowerCase().includes(search.toLowerCase()) || villager.personality.toLowerCase().includes(search.toLowerCase())
     })
@@ -91,9 +108,10 @@ function VillagerContainer(){
                 <VillagerFilter 
                     search={search}
                     onSearchChange={onSearchChange}
+                    categoryChange={categoryChange}
                 />
                 <div className="filter">
-                <button class="searchButton" onClick={handleClick}>+</button>
+                <button className="searchButton" onClick={handleClick}>+</button>
                 </div>
                 
             </h2>

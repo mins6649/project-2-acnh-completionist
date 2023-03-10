@@ -9,15 +9,15 @@ function VillagerCard({name, personality, birthday, species, hobby, catchPhrase,
         setIsLiked(!isLiked)
     }
     const front = <div> 
-            <p class="villagerCardText">Species: {species}</p> 
-            <p class="villagerCardText">Personality: {personality}</p> 
-            <button class="favoriteButton" onClick={handleLike}> {isLiked ? "♥" : "♡"} </button> 
+            <p className="villagerCardText">Species: {species}</p> 
+            <p className="villagerCardText">Personality: {personality}</p> 
+            <button className="favoriteButton" onClick={handleLike}> {isLiked ? "♥" : "♡"} </button> 
         </div>
 
     const back = <div> 
-            <p class="villagerCardText">Birthday: {birthday}</p> 
-            <p class="villagerCardText">Hobby: {hobby}</p> 
-            <p class="villagerCardText">Catch-phrase: {catchPhrase}</p> 
+            <p className="villagerCardText">Birthday: {birthday}</p> 
+            <p className="villagerCardText">Hobby: {hobby}</p> 
+            <p className="villagerCardText">Catch-phrase: {catchPhrase}</p> 
         </div> 
 
     const [isClicked, setIsClicked] = useState(true)

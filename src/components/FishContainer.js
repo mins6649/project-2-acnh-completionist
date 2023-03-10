@@ -48,7 +48,7 @@ function FishContainer(){
             <h2 className="subtitle">
                 Fish
                 <Filter search={search} searchChange={searchChange} categoryChange={categoryChange} />
-                <button className="hemisphereToggle" onClick={handleHemisphere}>
+                <button className="hemisphereToggle desktopShow" onClick={handleHemisphere}>
                     {isNorth ? 
                         <>
                             Northern Hemisphere 
@@ -62,6 +62,21 @@ function FishContainer(){
                     }
                 </button>
                 </h2>
+                <div className="mobileHemisphereToggleContainer">
+                    <button className="mobileHemisphereToggle hemisphereToggle desktopHide" onClick={handleHemisphere}>
+                        {isNorth ? 
+                            <>
+                                Northern Hemisphere 
+                                <img className="globeImg" src={NHem}/>
+                            </> 
+                            : 
+                            <>
+                                Southern Hemisphere 
+                                <img className="globeImg" src={SHem}/>
+                            </>
+                        }
+                    </button>
+                </div>
             <CatchThemAllList arr={fishList} isNorth={isNorth}/>
         </div>
     )
